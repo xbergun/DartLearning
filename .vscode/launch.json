@@ -10,6 +10,7 @@
             "type": "dart",
             "program": "${file}",
             "console": "terminal",
+            
         }
     ]
 }
