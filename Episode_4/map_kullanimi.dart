@@ -26,11 +26,22 @@ void main(List<String> args) {
 
   deneme2["yas"] = 55;
 
+  //keyleri gezme
   for (String oankiAnahtar in emre.keys) {
     print(oankiAnahtar);
   }
-}
 
-for(dynamic deger in emre.values){
-  print(deger);
+  //valueleri gezme
+  for (dynamic deger in emre.values) {
+    print(deger);
+  }
+
+  //ikisini de gezme entries
+  for (var element in emre.entries) {
+    print("Key degeri : ${element.key} value degeri: ${element.value}");
+  }
+
+  if (emre.containsKey("sehir")) {
+    print("Bulunan yaş değeri: ${emre["yas"]}");
+  }
 }
