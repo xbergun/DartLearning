@@ -1,5 +1,4 @@
 //Nesneye yönelimli programlamaya giriş
-import 'dart:html';
 
 /**
  * Sınıf : Kendi veri türlerimiz veya soyut olan taslaklara denir. Kendi içinde değişkenlere ve methodlara sahiptir
@@ -13,16 +12,16 @@ import 'dart:html';
  */
 
 void main(List<String> args) {
-  Ogrenci ogr1 = Ogrenci();
+  Ogrenci1 ogr1 = Ogrenci1();
   print(ogr1.ogrAd);
-  Ogrenci ogr2 = Ogrenci();
+  Ogrenci1 ogr2 = Ogrenci1();
 
-  var kubra = Ogrenci();
-  dynamic berkay = Ogrenci();
+  var kubra = Ogrenci1();
+  dynamic berkay = Ogrenci1();
   
 }
 
-class Ogrenci {
+class Ogrenci1 {
   //instance variables
    int ogrNo = 1;
   String ogrAd = "";

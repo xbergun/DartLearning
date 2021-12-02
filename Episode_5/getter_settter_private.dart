@@ -1,3 +1,10 @@
+import 'dart:math';
+
+import 'factory_constructor.dart';
+import 'first_class_example.dart';
+import 'odevler/Daire.dart';
+import 'odevler/ogrenci.dart';
+import 'musteri.dart';
 import 'veritabani_islemleri.dart';
 
 /**
@@ -8,9 +15,47 @@ import 'veritabani_islemleri.dart';
  * Setter metotlar: sınıf değişkenlerine veri atamak için kullanılır. Bu metotların amacı özellikle private yani dış düşyanın erişimine kapatılan değişkenlere veri atmaktır. Ayrıca veri ataması yapılırken gerekli olan kontrollerin ve işlemlerin yapılması için kullanılır.
  */
 void main(List<String> args) {
-  VeritabaniIslemleri db = VeritabaniIslemleri();
-  VeritabaniIslemleri db2 =
-      VeritabaniIslemleri.loginWithNameandPassword("emre2", "123");
+  Ogrenci ogr1 = Ogrenci(id: 5, notDegeri: 10);
+
+  List<Ogrenci> tumOgrenciler = List.filled(100, Ogrenci());
+
+  ogrenciListesiniDoldur(tumOgrenciler);
+  print(tumOgrenciler[5].notDegeri);
+  print(tumOgrenciler[5].id);
+
+  for (Ogrenci sankiOgrenci in tumOgrenciler) {
+    print(sankiOgrenci);
+  }
+
+  print("Tüm öğrencilerin ortalaması: " +
+      notOrtalamasi(tumOgrenciler).toString());
+
+  // Musteri ml = Musteri(152);
+  // ml.bilgileriYazdir();
+  // ml.musteriNoAta = 534;
+
+  Daire d1 = Daire(-1);
+  print(d1.alanHesapla());
+  print(d1.cevreHesapla());
+
+  // VeritabaniIslemleri db = VeritabaniIslemleri();
+  // VeritabaniIslemleri db2 =
+  //     VeritabaniIslemleri.loginWithNameandPassword("emre2", "123");
+}
+
+void ogrenciListesiniDoldur(List<Ogrenci> liste) {
+  for (int i = 0; i < liste.length; i++) {
+    liste[i] =
+        Ogrenci(id: Random().nextInt(1000), notDegeri: Random().nextInt(100));
+  }
+}
+
+double notOrtalamasi(List<Ogrenci> Liste1) {
+  int toplam = 0;
+  for (Ogrenci oankiOgrenci in Liste1) {
+    toplam = toplam + oankiOgrenci.notDegeri;
+  }
+  return toplam / Liste1.length;
 }
 
 

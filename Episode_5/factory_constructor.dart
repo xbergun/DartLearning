@@ -1,26 +1,26 @@
 void main(List<String> args) {
-  Ogrenci emre = Ogrenci(5, "Emre");
-  Ogrenci hasan = Ogrenci.idsiz("Berkay");
-  Ogrenci ayse = Ogrenci.factoryKurucusu(-9, "Ayse");
+  Ogrenci1 emre = Ogrenci1(5, "Emre");
+  Ogrenci1 hasan = Ogrenci1.idsiz("Berkay");
+  Ogrenci1 ayse = Ogrenci1.factoryKurucusu(-9, "Ayse");
   print(ayse.id);
 }
 
-class Ogrenci {
+class Ogrenci1 {
   int id = 0;
   String isim = "";
 
-  Ogrenci(this.id, this.isim) {
+  Ogrenci1(this.id, this.isim) {
     print("Default Kurucu");
   }
 
-  Ogrenci.idsiz(this.isim) {
+  Ogrenci1.idsiz(this.isim) {
     print("İsimlendirilmiş Kurucu");
   }
 
-  factory Ogrenci.factoryKurucusu(int id, String isim) {
+  factory Ogrenci1.factoryKurucusu(int id, String isim) {
     if (id < 0) {
-      return Ogrenci(5, isim);
+      return Ogrenci1(5, isim);
     } else
-      return Ogrenci(id, isim);
+      return Ogrenci1(id, isim);
   }
 }
